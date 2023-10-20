@@ -675,9 +675,14 @@ function InfoScreen.drawPokemonInfoScreen(pokemonID)
 	end
 	offsetY = offsetY + 12 + linespacing
 
-	-- BST
-	Drawing.drawText(offsetX, offsetY, Resources.TrackerScreen.StatBST .. ":", Theme.COLORS["Default text"], boxInfoTopShadow)
-	Drawing.drawText(offsetColumnX, offsetY, data.p.bst, Theme.COLORS["Default text"], boxInfoTopShadow)
+	-- BST & EXP. YIELD
+	if Options["Show experience yield"] then
+		Drawing.drawText(offsetX, offsetY, string.format("%s: %s", Resources.TrackerScreen.StatBST, data.p.bst), Theme.COLORS["Default text"], boxInfoTopShadow)
+		Drawing.drawText(offsetColumnX, offsetY, string.format("%s: %s", Resources.TrackerScreen.ExpYield, tostring(data.p.yield)), Theme.COLORS["Default text"], boxInfoTopShadow)
+	else
+		Drawing.drawText(offsetX, offsetY, Resources.TrackerScreen.StatBST .. ":", Theme.COLORS["Default text"], boxInfoTopShadow)
+		Drawing.drawText(offsetColumnX, offsetY, data.p.bst, Theme.COLORS["Default text"], boxInfoTopShadow)
+	end
 	offsetY = offsetY + linespacing
 
 	-- WEIGHT

@@ -34,6 +34,7 @@ function GameOptionsScreen.createButtons()
 		{ "Auto swap to enemy", "OptionAutoSwapEnemy", },
 		{ "Hide stats until summary shown", "OptionHideStatsUntilSummary", },
 		{ "Show experience points bar", "OptionShowExpBar", },
+		{ "Show experience yield", "OptionShowExpYield", },
 		{ "Show physical special icons", "OptionShowPhysicalSpecial", },
 		{ "Show move effectiveness", "OptionShowMoveEffectiveness", },
 		{ "Calculate variable damage", "OptionCalculateVariableDamage", },
@@ -45,7 +46,7 @@ function GameOptionsScreen.createButtons()
 
 	local startX = Constants.SCREEN.WIDTH + Constants.SCREEN.MARGIN + 4
 	local startY = Constants.SCREEN.MARGIN + 14
-	local linespacing = Constants.SCREEN.LINESPACING + 1
+	local linespacing = Constants.SCREEN.LINESPACING
 
 	for _, optionTuple in ipairs(optionKeyMap) do
 		GameOptionsScreen.Buttons[optionTuple[1]] = {

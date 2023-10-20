@@ -140,6 +140,14 @@ function DataHelper.buildTrackerScreenDisplay(forceView)
 	data.p.friendship = viewedPokemon.friendship or 70 -- Current friendship value; 70 is default for most Pokémon
 	data.p.friendshipBase = viewedPokemon.friendshipBase or 70 -- The starting friendship value of the Pokémon
 
+	-- Experience yield
+	local yield = viewedPokemon.yield or 0
+	if Battle.isWildEncounter then
+		data.p.yield = math.floor(yield * viewedPokemon.level / 7)
+	else
+		data.p.yield = math.floor(yield * viewedPokemon.level * 3 / 14)
+	end
+
 	-- Add: Stats, Stages, and Nature
 	data.p.nature = viewedPokemon.nature
 	data.p.positivestat = ""
@@ -392,6 +400,7 @@ function DataHelper.buildPokemonInfoDisplay(pokemonID)
 	data.p.id = pokemon.pokemonID or 0
 	data.p.name = pokemon.name or Constants.BLANKLINE
 	data.p.bst = pokemon.bst or Constants.BLANKLINE
+	data.p.yield = pokemon.yield or 0
 	data.p.weight = pokemon.weight or Constants.BLANKLINE
 	data.p.evo = pokemon.evolution or PokemonData.Evolutions.NONE
 

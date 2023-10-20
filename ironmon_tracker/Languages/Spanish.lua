@@ -119,6 +119,7 @@ ScreenResources{
 		StatBST = "BST", -- NEEDS TRANSLATION
 		StatAccuracy = "Acc", -- NEEDS TRANSLATION
 		StatEvasion = "Eva", -- NEEDS TRANSLATION
+		ExpYield = "EXP", -- NEEDS TRANSLATION
 		HeaderMoves = "Moves", -- NEEDS TRANSLATION
 		HeaderPP = "PP", -- NEEDS TRANSLATION
 		HeaderPow = "Pow", -- NEEDS TRANSLATION
@@ -236,6 +237,7 @@ ScreenResources{
 		OptionAutoSwapEnemy = "Auto swap to enemy", -- NEEDS TRANSLATION
 		OptionHideStatsUntilSummary = "Hide info until summary shown", -- NEEDS TRANSLATION
 		OptionShowExpBar = "Show experience points bar", -- NEEDS TRANSLATION
+		OptionShowExpYield = "Show experience yield", -- NEEDS TRANSLATION
 		OptionShowPhysicalSpecial = "Show physical special icons", -- NEEDS TRANSLATION
 		OptionShowMoveEffectiveness = "Show move effectiveness", -- NEEDS TRANSLATION
 		OptionCalculateVariableDamage = "Calculate variable damage", -- NEEDS TRANSLATION

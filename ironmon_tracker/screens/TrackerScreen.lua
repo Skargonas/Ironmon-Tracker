@@ -831,6 +831,8 @@ function TrackerScreen.drawPokemonInfoArea(data)
 	-- Squeeze text together a bit to show the exp bar
 	if Options["Show experience points bar"] and Battle.isViewingOwn then
 		linespacing = linespacing - 1
+	elseif Options["Show experience yield"] and not Battle.isViewingOwn then
+		linespacing = linespacing - 2
 	end
 
 	-- POKEMON NAME
@@ -868,9 +870,13 @@ function TrackerScreen.drawPokemonInfoArea(data)
 		end
 		offsetY = offsetY + linespacing
 	else
-		-- Swaps the display order, Level/Evo first, then Last Level Seen.
+		-- Swaps the display order, Level/Evo first, exp. yield then Last Level Seen.
 		Drawing.drawText(Constants.SCREEN.WIDTH + offsetX, offsetY, levelEvoText, Theme.COLORS["Default text"], shadowcolor)
 		offsetY = offsetY + linespacing
+		if Options["Show experience yield"] then
+			Drawing.drawText(Constants.SCREEN.WIDTH + offsetX, offsetY, string.format("%s: %s", Resources.TrackerScreen.ExpYield, data.p.yield) , Theme.COLORS["Default text"], shadowcolor)
+			offsetY = offsetY + linespacing
+		end
 		Drawing.drawText(Constants.SCREEN.WIDTH + offsetX, offsetY, extraInfoText, extraInfoColor, shadowcolor)
 		offsetY = offsetY + linespacing
 	end
@@ -890,6 +896,8 @@ function TrackerScreen.drawPokemonInfoArea(data)
 	-- Unsqueeze the text
 	if Options["Show experience points bar"] and Battle.isViewingOwn then
 		linespacing = linespacing + 1
+	elseif Options["Show experience yield"] and not Battle.isViewingOwn then
+		linespacing = linespacing + 2
 	end
 
 	-- HEALS INFO / ENCOUNTER INFO

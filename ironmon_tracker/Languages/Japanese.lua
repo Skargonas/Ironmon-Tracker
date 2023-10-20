@@ -119,6 +119,7 @@ ScreenResources{
 		StatBST = "合計",
 		StatAccuracy = "命中率",
 		StatEvasion = "回避率",
+		ExpYield = "経験",
 		HeaderMoves = "技",
 		HeaderPP = "ＰＰ",
 		HeaderPow = "威力",
@@ -238,6 +239,7 @@ ScreenResources{
 		OptionAutoSwapEnemy = "Auto swap to enemy", -- NEEDS TRANSLATION
 		OptionHideStatsUntilSummary = "Hide info until summary shown", -- NEEDS TRANSLATION
 		OptionShowExpBar = "Show experience points bar", -- NEEDS TRANSLATION
+		OptionShowExpYield = "Show experience yield", -- NEEDS TRANSLATION
 		OptionShowPhysicalSpecial = "Show physical special icons", -- NEEDS TRANSLATION
 		OptionShowMoveEffectiveness = "Show move effectiveness", -- NEEDS TRANSLATION
 		OptionCalculateVariableDamage = "Calculate variable damage", -- NEEDS TRANSLATION
